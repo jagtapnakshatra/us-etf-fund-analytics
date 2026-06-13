@@ -15,7 +15,7 @@ Liquidity (volume)
 
 All metrics are standardized using percentile ranking to enable fair comparison across funds.
 
-Key Features
+Key Features:
 ETL pipeline for financial time-series data
 Daily return and volatility computation
 Percentile-based normalization for cross-fund comparison
@@ -24,14 +24,16 @@ Quartile-based segmentation
 Hidden gem detection logic
 Category-level performance analysis
 Export-ready datasets for BI tools (Tableau)
-Tech Stack
+
+Tech Stack:
 Python
 Pandas
 NumPy
 Google Colab
 CSV-based data pipeline
 Tableau (downstream visualization)
-Pipeline Workflow
+
+Pipeline Workflow:
 Load ETF and mutual fund datasets
 Clean and preprocess time-series data
 Calculate daily returns and rolling volatility
@@ -42,7 +44,8 @@ Compute weighted overall score
 Rank and segment funds
 Identify hidden gems
 Export final datasets
-Feature Engineering
+
+Feature Engineering:
 Returns
 daily_return = (close - prev_close) / prev_close
 Volatility
@@ -57,10 +60,11 @@ overall_score = (
     0.6 * return_percentile +
     0.4 * risk_percentile
 )
+
 Return percentile: higher is better
 Risk percentile: lower volatility is better (inverted ranking)
-Hidden Gem Logic
 
+Hidden Gem Logic
 A fund is classified as a Hidden Gem if:
 
 Above median returns
@@ -70,10 +74,9 @@ Below median trading volume
 These represent high-quality but under-the-radar funds.
 
 Outputs
+
 Fund-Level Dataset
-
 Includes:
-
 Returns
 Volatility
 Liquidity
@@ -81,10 +84,9 @@ Percentile scores
 Overall ranking
 Segment classification
 Hidden gem flag
+
 Category Summary
-
 Includes:
-
 Category-wise performance metrics
 Risk and return averages
 Hidden gem counts
